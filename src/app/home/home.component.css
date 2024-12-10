@@ -1,0 +1,10 @@
+body {
+  background-color: midnightblue;
+}
+.color-general{
+  background-color: midnightblue;
+}
+.brand-name {
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+
+}

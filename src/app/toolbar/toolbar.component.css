@@ -1,0 +1,80 @@
+mat-toolbar {
+  position: fixed; /* Fija el toolbar al hacer scroll */
+  top: 0; /* Asegura que quede anclado en la parte superior */
+  z-index: 1000; /* Asegura que esté por encima de otros elementos */
+  background-color: rgba(0, 0, 0, 0.7); /* Negro con transparencia del 70% */
+  backdrop-filter: blur(10px); /* Efecto de desenfoque en el fondo */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sutil sombra para dar profundidad */
+  transition: background-color 0.3s ease; /* Suaviza los cambios de fondo */
+}
+
+.mat-color-white {
+  color: white; /* Asegura que el texto y los iconos sean visibles */
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;  /* Esto permite que los elementos se envuelvan en pantallas pequeñas */
+}
+
+.menu-items {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;  /* Hace que los botones se acomoden en varias filas en pantallas pequeñas */
+}
+
+mat-button {
+  display: flex;
+  align-items: center;
+  margin-right: 16px;  /* Espaciado entre los botones */
+}
+
+.example-spacer {
+  flex: 1 1 auto; /* Ocupa el espacio sobrante en el toolbar */
+}
+
+.example-icon {
+  margin-left: 10px;
+}
+
+.favorite-icon {
+  cursor: pointer;
+}
+
+.favorite-icon:active {
+  transform: scale(0.9);  /* Efecto de presión */
+}
+
+/* Para pantallas más pequeñas */
+@media screen and (max-width: 600px) {
+  .menu-items {
+    display: none; /* Ocultamos los botones en pantallas pequeñas */
+    flex-direction: column; /* Pone los botones en columna */
+    align-items: center; /* Centra los botones */
+    position: absolute;
+    top: 56px; /* Justo debajo de la toolbar */
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 999;
+  }
+
+  .menu-items.show {
+    display: flex; /* Mostramos los botones cuando el menú está activo */
+  }
+
+  mat-button {
+    margin-right: 0;
+    margin-bottom: 10px;  /* Espaciado entre botones en vertical */
+  }
+
+  .menu-icon {
+    display: block; /* Mostramos el icono de menú en pantallas pequeñas */
+  }
+
+  .example-icon {
+    margin-left: 0;
+  }
+}

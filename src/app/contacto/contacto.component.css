@@ -1,0 +1,221 @@
+/* Video de pantalla completa */
+.fullscreen-image-section {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Ocupa toda la altura de la pantalla */
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.5); /* Negro con transparencia del 70% */
+
+  display: flex;
+  justify-content: flex-end; /* Alinea el contenido hacia la derecha */
+}
+.fullscreen-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Escala el video para cubrir toda el área */
+  z-index: -1;
+  filter: blur(1px) contrast(1.1) brightness(1.2); /* Suavizado y mejora visual */
+  filter: contrast(1.2) saturate(1.1); /* Mejora contraste y saturación */
+}
+.image-overlay {
+  position: absolute;
+  top: 60%;
+  left: 35%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.image-overlay h1 {
+  font-size: 3rem;
+  margin: 0;
+}
+
+.image-overlay h2 {
+  color: white;
+  font-size: 3rem;
+  margin: 0;
+}
+
+
+
+h2 {
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.image-overlay p {
+  font-size: 1.5rem;
+  margin: 10px 0 0;
+}
+
+.image-container.image-container {
+  position: absolute;
+  top: 35%; /* Ajuste de posición, más cerca del top */
+  left: 30%; /* Centra la imagen horizontalmente */
+  transform: translateX(-50%); /* Centra la imagen horizontalmente */
+  z-index: 1; /* Asegura que la imagen esté encima del video */
+}
+
+.profile-image {
+  width: 40%; /* Ajusta el tamaño */
+  height: auto;
+  border-radius: 50%; /* Hace que la imagen sea circular */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7); /* Agrega sombra */
+  object-fit: cover; /* Hace que la imagen se ajuste correctamente */
+}
+.content-container {
+  flex-direction: column; /* Alineación vertical */
+  width: 50%;
+  align-items: left; /* Centrado horizontal */
+}
+
+@media (max-width: 768px) {
+
+  .content-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column; /* Alineación vertical */
+    align-items: left; /* Centrado horizontal */
+    justify-content: flex-start; /* Alineación al inicio */
+    width: 100%; /* Asegura que ocupe todo el ancho */
+
+  }
+
+  .fullscreen-image-section {
+    display: flex;
+    flex-direction: column; /* Distribución vertical */
+    justify-content: flex-start; /* Alinea los elementos al inicio */
+    align-items: center; /* Centra los elementos horizontalmente */
+    position: relative; /* Asegúrate de que el scroll funcione */
+    min-height: 100vh; /* Asegura que ocupe la altura completa de la ventana */
+    padding-bottom: 20px; /* Espaciado inferior para evitar corte */
+  }
+
+    /* Colocar la imagen arriba del texto */
+    .image-container.image-container {
+      position: relative; /* Cambiar de absolute a relative */
+      top: 10%;
+      left: auto;
+      transform: none; /* Elimina el centrado vertical */
+      margin-bottom: 20px; /* Agrega un espacio entre la imagen y el texto */
+      width: 120px; /* Ajusta el tamaño de la imagen */
+      height: 120px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    /* Ajustar la imagen */
+    .profile-image {
+      width: 100%;
+      height: 100%;
+    }
+
+  .profile-image {
+    width: 100%; /* Ajuste para móviles */
+    height: 100%;
+    border-radius: 50%; /* Mantener circularidad */
+  }
+  /* Ajustar el texto */
+  .image-overlay {
+    position: static; /* Cambia la posición para que se ubique debajo de la imagen */
+    transform: none;
+    margin-top: 15%;
+  }
+
+  .image-overlay h1 {
+    font-size: 2rem;
+  }
+
+  .image-overlay h2 {
+    color: white;
+    font-size: 3rem;
+    margin: 0;
+  }
+
+  .image-overlay p {
+    font-size: 1.2rem;
+  }
+
+  .form-section {
+    position: relative;
+    width: 100%; /* Ancho completo */
+    background-color: rgba(0, 0, 0, 0.9); /* Fondo oscuro */
+    padding: 20px; /* Espaciado interno */
+    margin-top: 20px; /* Espaciado superior */
+    display: flex;
+    flex-direction:  row;
+    align-items: right;
+    justify-content: center;
+  }
+
+  form {
+    width: 100%; /* Ancho completo del formulario */
+  }
+
+
+}
+
+
+.image-container {
+  margin-bottom: 20px; /* Espaciado debajo de la imagen */
+}
+
+/* Sección derecha con fondo sombreado e inputs */
+.form-section {
+  width: 100%; /* Ocupa la mitad derecha */
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro con 90% de opacidad */
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.form-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+form {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+}
+
+form label {
+  margin: 10px 0 5px;
+  font-size: 1rem;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+form button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+form button:hover {
+  background-color: #0056b3;
+}
